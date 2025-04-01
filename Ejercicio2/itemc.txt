@@ -1,0 +1,8 @@
+La relación entre Curso y Estudiante es de Agregación, 
+ya que un curso puede tener múltiples estudiantes inscritos, 
+pero estos estudiantes pueden pertenecer a varios cursos a la vez y seguir existiendo 
+independientemente de un curso específico. 
+En este tipo de relación, un curso "tiene" (has-a) estudiantes, pero no es el único dueño de ellos. 
+Si un curso se elimina, los estudiantes no desaparecen, ya que pueden estar inscritos en otros cursos. 
+Esto distingue la Agregación de la Composición, donde los objetos dependientes no pueden existir sin el objeto principal. 
+En resumen, la relación entre curso y estudiante es una agregación porque los estudiantes pueden formar parte de varios cursos sin perder su identidad.

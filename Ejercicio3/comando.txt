@@ -1,0 +1,1 @@
+cd Ejercicio3 && g++ main.cpp entero.cpp real.cpp complejo.cpp -o ejercicio3 && ./ejercicio3

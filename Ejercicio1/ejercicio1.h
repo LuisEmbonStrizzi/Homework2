@@ -1,5 +1,4 @@
-#ifndef EJERCICIO1_H
-#define EJERCICIO1_H
+#pragma once
 
 #include <string>
 
@@ -33,4 +32,3 @@ class DetermineTime {
         void showTime24h() const;
 };
 
-#endif

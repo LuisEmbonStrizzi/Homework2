@@ -1,1 +1,1 @@
-cd "Ejercicio 1" && g++ ejercicio.h ejercicio.cpp -o ejercicio1 && ./ejercicio1
+cd "Ejercicio1" && g++ ejercicio.h ejercicio.cpp -o ejercicio1 && ./ejercicio1
