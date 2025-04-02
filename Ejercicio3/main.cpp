@@ -3,7 +3,6 @@ Este programa implementa una jerarquía de clases basada en la interfaz "Numero"
 Utiliza herencia para representar diferentes tipos de números: Entero, Real y Complejo,
 cada uno con sus propias implementaciones de suma, resta y multiplicación.
 
---- DISEÑO ---
 1. La clase abstracta "Numero" define la interfaz común con métodos virtuales puros.
 2. Las clases "Entero", "Real" y "Complejo" heredan de "Numero" e implementan sus propias
    versiones de las operaciones aritméticas y "toString".

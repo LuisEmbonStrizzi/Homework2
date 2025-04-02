@@ -1,2 +1,2 @@
-cd "Ejercicio2" && g++ curso.cpp curso.h estudiantes.cpp main.cpp -o ejercicio2 && ./ejercicio2
+cd "Ejercicio2" && g++ curso.cpp estudiantes.cpp main.cpp -o ejercicio2 && ./ejercicio2
 

@@ -4,6 +4,12 @@
 #include <vector>
 using namespace std;
 
+//Como me parecía un poco rebuscada la consigna decidí incluir varios casos de testeo. 
+//Esta parte me parecía rebuscada una lista de cursos con su nota final y los métodos
+//que crea necesarios para obtener los datos del alumno: nombre completo,
+//legajo y su promedio general. Específicamente, como testear los cursos del estudiante y su promedio general
+//quizás no era necesario incluirlo como caso de testeo pero igual lo incluí por las dudas
+
 void mostrarMenu() {
     cout << "\n Menu desplegable pedido \n";
     cout << "1. Crear curso\n";
@@ -16,7 +22,8 @@ void mostrarMenu() {
     cout << "8. Mostrar promedio general de un estudiante\n";
     cout << "9. Cambiar nota final de la materia del estudiante\n";
     cout << "10. Cambiar el nombre del estudiante con el objetivo de luego listar (item 4) y que se vea el nombre cambiado en todos los cursos los cuales forma parte el alumno\n";
-    cout << "11. Salir\n";
+    cout << "11. Testear capacidad máxima, (lo que hago es llenar un curso)\n";
+    cout << "12. Salir\n";
     cout << "Seleccione una opcion: ";
 }
 
@@ -47,20 +54,34 @@ int main() {
             case 2: {
                 cout << "Ingrese nombre del curso: ";
                 getline(cin, nombreCurso);
+                
                 for (auto& curso : cursos) {
                     if (curso.getNombre() == nombreCurso) {
                         cout << "Ingrese nombre del estudiante: ";
                         getline(cin, nombreEstudiante);
                         cout << "Ingrese legajo del estudiante: ";
                         cin >> legajo;
+            
                         if (curso.inscribirEstudiante(nombreEstudiante, legajo)) {
                             cout << "Estudiante inscrito correctamente.\n";
+            
+                            // verifico el inciso ii de paso
+                            if (curso.estaInscrito(legajo)) {
+                                cout << "Verificación: El estudiante " << nombreEstudiante 
+                                     << " con legajo " << legajo << " está inscrito en '" 
+                                     << nombreCurso << "'.\n";
+                            } else {
+                                cout << "Error: No se pudo verificar la inscripción del estudiante.\n";
+                            }
+                        } else {
+                            cout << "No se pudo inscribir al estudiante.\n";
                         }
                         break;
                     }
                 }
                 break;
             }
+            
 
             case 3: {
                 cout << "Ingrese nombre del curso: ";
@@ -270,7 +291,38 @@ int main() {
 
                 break;
             }
-            case 11:
+            case 11: {
+                cout << "Ingrese nombre del curso a llenar: ";
+                getline(cin, nombreCurso);
+            
+                for (auto& curso : cursos) {
+                    if (curso.getNombre() == nombreCurso) {
+                        for (int i = 1; i <= 20; i++) {
+                            string nombreEstudiante = "Estudiante " + to_string(i);
+                            int legajo = 400 + i; // Legajo hardcodeado para cada estudiante
+                            
+                            if (!curso.inscribirEstudiante(nombreEstudiante, legajo)) {
+                                cout << "No se pudo inscribir a " << nombreEstudiante << ".\n";
+                            }
+                        }
+            
+                        // Intentar inscribir el estudiante 21
+                        string nombreEstudianteExtra = "Estudiante 21";
+                        int legajoExtra = 8989;
+                        if (!curso.inscribirEstudiante(nombreEstudianteExtra, legajoExtra)) {
+                            cout << "El curso '" << nombreCurso << "' está completo. No se puede inscribir a más estudiantes.\n";
+                        } else {
+                            cout << nombreEstudianteExtra << " ha sido inscrito correctamente.\n";
+                        }
+            
+                        break;
+                    }
+                }
+                break;
+            }
+            
+            
+            case 12:
                 cout << "Saliendo...\n";
                 break;
 
@@ -278,7 +330,7 @@ int main() {
                 cout << "Opción no válida. Intente nuevamente.\n";
                 break;
         }
-    } while (opcion != 11);
+    } while (opcion != 12);
 
     return 0;
 }

@@ -1,0 +1,70 @@
+A la hora de testearlo decidí hacer un menú desplegable, entiendo que puede ser medio engorroso pq puse varias
+opciones pero dejo una forma de testeo del programa
+
+1. Crear curso  
+   - Seleccionar la opción 1.
+   - Ingresar el nombre del curso, por ejemplo: analisis.
+   - Repetir el proceso para otro curso, por ejemplo: fisica.
+
+2. Inscribir estudiante en curso  
+   - Seleccionar la opción 2.
+   - Ingresar el nombre del curso: analisis.
+   - Ingresar el nombre del estudiante: juancho.
+   - Ingresar el legajo del estudiante: 1234.
+   - Repetir el proceso inscribiendo a juancho en fisica con el mismo legajo.
+   - Inscribir otro estudiante diferente en analisis.
+
+3. Desinscribir estudiante de un curso  
+   - Seleccionar la opción 3.
+   - Ingresar el nombre del curso: fisica.
+   - Ingresar el legajo del estudiante: 1234.
+   - Verificar que el estudiante ya no figura en fisica.
+
+4. Listar estudiantes de un curso (este se pude repetir en cada paso para verificar) 
+   - Seleccionar la opción 4.
+   - Ingresar el nombre del curso: analisis.
+   - Verificar que aparecen los estudiantes inscritos.
+
+5. Copiar curso  
+   - Seleccionar la opción 5.
+   - Ingresar el nombre del curso a copiar: analisis.
+   - Ingresar el nuevo nombre del curso copiado: algebra.
+   - Listar estudiantes del nuevo curso copiado para verificar que los estudiantes fueron copiados correctamente.
+
+6. Ordenar estudiantes de un curso  
+   - Seleccionar la opción 6.
+   - Ingresar el nombre del curso: analisis. 
+   - Verificar que los estudiantes aparecen ordenados. (acá inscribir los estudiantes necesarios y verificar que estén ordenados, porque puede ser que cuando se incriban por default estén ordenados)
+
+7. Mostrar materias de un estudiante  
+   - Seleccionar la opción 7.
+   - Ingresar el legajo del estudiante: 1234.
+   - Verificar que aparecen los cursos en los que está inscrito.
+
+8. Cambiar nota final de una materia  
+   - Seleccionar la opción 9.
+   - Ingresar el nombre del curso: analisis.
+   - Ingresar el legajo del estudiante: 1234.
+   - Ingresar la nueva nota final: (cualquiera)
+   - Verificar que la nota fue actualizada. 
+   - La idea acá es que se cambie la nota de cada estudiante en cada materia, o sea cuando se inscribe yo decidí que se inscriba con la nota = 0.0, luego se cambie
+
+9. Mostrar promedio general de un estudiante  
+   - Seleccionar la opción 8.
+   - Ingresar el legajo del estudiante: 1234.
+   - Verificar que el promedio es correcto considerando las materias inscritas.
+
+10. Cambiar el nombre de un estudiante  
+   - Seleccionar la opción 10.
+   - Ingresar el legajo del estudiante: 1234.
+   - Ingresar el nuevo nombre: juancho.
+   - Listar los estudiantes de analisis y algebra para verificar que el nombre cambió en ambos cursos.
+
+12. Probar si el curso está completo
+   - Directamente esta opción llena un curso
+   - Verifica si el sistema indica correctamente que el curso está lleno al intentar inscribir el último estudiante.
+   - Se puede listar los estudiantes del curso
+
+11. Salir del programa  
+   - Seleccionar la opción 11 para finalizar la prueba.
+

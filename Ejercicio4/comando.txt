@@ -1,0 +1,2 @@
+cd "Ejercicio4" && g++ cajaDeAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp main.cpp -o ejercicio4 && ./ejercicio4
+

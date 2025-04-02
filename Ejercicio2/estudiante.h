@@ -15,7 +15,7 @@ class Estudiante {
         string getName() const;
         int getLegajo() const;
         double getPromedio() const;
-        void cambiarNombre(const string& nuevoNombre);
+        void cambiarNombre(const string& nuevoNombre); //Este método sirve luego para testear el funcionamiento
         void agregarCurso(const string& curso, double nota);
         void mostrarCursos() const;
         void cambiarNotaCurso(const string& nombreCurso, double nuevaNota);

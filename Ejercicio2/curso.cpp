@@ -2,6 +2,9 @@
 #include "estudiante.h"
 using namespace std;
 
+
+Curso::Curso(const Curso& otro) : nombre(otro.nombre), estudiantes(otro.estudiantes) {}
+
 vector<shared_ptr<Estudiante>> Curso::obtenerEstudiantes() const {
     return estudiantes;  // Retorna una copia del vector
 }
