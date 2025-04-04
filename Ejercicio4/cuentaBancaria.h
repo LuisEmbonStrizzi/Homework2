@@ -6,7 +6,7 @@ using namespace std;
 
 class CuentaBancaria {
 protected: 
-    double balance;  //lo puse en protected para que solo sea accedido desde las subclases (CajaDeAhorro, CuentaCorriente)
+    double balance;  //lo puse en protected para que solo sea accedido desde las subclases (cajaDeAhorro, cuentaCorriente)
     string titularCuenta; //idem que el anterior
 
 public:

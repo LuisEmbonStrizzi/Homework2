@@ -6,7 +6,7 @@ using namespace std;
 Curso::Curso(const Curso& otro) : nombre(otro.nombre), estudiantes(otro.estudiantes) {}
 
 vector<shared_ptr<Estudiante>> Curso::obtenerEstudiantes() const {
-    return estudiantes;  // Retorna una copia del vector
+    return estudiantes;  // retorna una copia del vector, útil para varios casos
 }
 
 
@@ -31,7 +31,7 @@ bool Curso::inscribirEstudiante(string nombre, int legajo) {
 
     auto estudiante = make_shared<Estudiante>(nombre, legajo);
     
-    // Agregar el curso con una nota inicial de 0.0, tiene sentido que arranque con nota 0
+    // Agregar el curso con una nota inicial de 0.0, tiene sentido que arranque con nota 0.0
     estudiante->agregarCurso(this->getNombre(), 0.0);
 
     estudiantes.push_back(estudiante);

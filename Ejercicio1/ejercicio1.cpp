@@ -7,33 +7,33 @@
 using namespace std;
 
 /*
-    Implementación de la clase DetermineTime
-    - Se utiliza sobrecarga de constructores para permitir diferentes formas de inicialización.
-    - Se usa lista de inicialización en cada constructor para asignar valores a los atributos de la clase.
+    implementación de la clase DetermineTime
+    - se utiliza sobrecarga de constructores para permitir diferentes formas de inicialización.
+    - se usa lista de inicialización en cada constructor para asignar valores a los atributos de la clase.
 */
 
-// Constructor por defecto, inicializa todo en 0 y "a.m."
+// constructor por defecto, inicializa todo en 0 y "a.m."
 DetermineTime::DetermineTime() : hrs(0), mins(0), secs(0), part_day("a.m.") {}
 
-// Constructor que solo recibe la hora
+// constructor que solo recibe la hora
 DetermineTime::DetermineTime(int HHh) : hrs(HHh), mins(0), secs(0), part_day("a.m.") {
     if (HHh < 1 || HHh > 12) throw invalid_argument("Horas fuera de rango (1-12).");
 }
 
-// Constructor que recibe hora y minutos
+// constructor que recibe hora y minutos
 DetermineTime::DetermineTime(int HHh, int MMm) : hrs(HHh), mins(MMm), secs(0), part_day("a.m.") {
     if (HHh < 1 || HHh > 12) throw invalid_argument("Horas fuera de rango (1-12).");
     if (MMm < 0 || MMm >= 60) throw invalid_argument("Minutos fuera de rango (0-59).");
 }
 
-// Constructor que recibe hora, minutos y segundos
+// constructor que recibe hora, minutos y segundos
 DetermineTime::DetermineTime(int HHh, int MMm, int SSs) : hrs(HHh), mins(MMm), secs(SSs), part_day("a.m.") {
     if (HHh < 1 || HHh > 12) throw invalid_argument("Horas fuera de rango (1-12).");
     if (MMm < 0 || MMm >= 60) throw invalid_argument("Minutos fuera de rango (0-59).");
     if (SSs < 0 || SSs >= 60) throw invalid_argument("Segundos fuera de rango (0-59).");
 }
 
-// Constructor completo con AM/PM
+// constructor completo con AM/PM
 DetermineTime::DetermineTime(int HHh, int MMm, int SSs, string AM_PM) : hrs(HHh), mins(MMm), secs(SSs), part_day(AM_PM) {
     if (HHh < 1 || HHh > 12) throw invalid_argument("Horas fuera de rango (1-12).");
     if (MMm < 0 || MMm >= 60) throw invalid_argument("Minutos fuera de rango (0-59).");
@@ -41,7 +41,7 @@ DetermineTime::DetermineTime(int HHh, int MMm, int SSs, string AM_PM) : hrs(HHh)
     if (AM_PM != "a.m." && AM_PM != "p.m.") throw invalid_argument("Formato incorrecto. Debe ser 'a.m.' o 'p.m.'.");
 }
 
-// Métodos para modificar los atributos de la clase
+// métodos para modificar los atributos de la clase
 void DetermineTime::setHour(int h) {
     if (h < 1 || h > 12) throw invalid_argument("Horas fuera de rango (1-12).");
     hrs = h;
@@ -62,13 +62,13 @@ void DetermineTime::setPartOfDay(string part) {
     part_day = part;
 }
 
-// Métodos para obtener los valores
+// métodos para obtener los valores
 int DetermineTime::getHour() const { return hrs; }
 int DetermineTime::getMins() const { return mins; }
 int DetermineTime::getSecs() const { return secs; }
 string DetermineTime::getPartOfDay() const { return part_day; }
 
-// Mostrar la hora en formato HHh, MMm, SSs a.m./p.m.
+// mostrar la hora en formato HHh, MMm, SSs a.m./p.m.
 void DetermineTime::showTime() const {
     cout << setfill('0') << setw(2) << hrs << "h, "
          << setw(2) << mins << "m, "
@@ -76,7 +76,7 @@ void DetermineTime::showTime() const {
          << part_day << endl;
 }
 
-// Mostrar la hora en formato 24h
+// mostrar la hora en formato 24h
 void DetermineTime::showTime24h() const {
     int hour24 = hrs;
     if (part_day == "p.m." && hrs != 12) hour24 += 12;

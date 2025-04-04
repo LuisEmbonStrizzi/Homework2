@@ -1,5 +1,5 @@
 A la hora de testearlo decidí hacer un menú desplegable, entiendo que puede ser medio engorroso pq puse varias
-opciones pero dejo una forma de testeo del programa
+opciones pero dejo una forma de testeo del programa, obviamente se puede modificar a gusto pero dejo una posible manera
 
 1. Crear curso  
    - Seleccionar la opción 1.

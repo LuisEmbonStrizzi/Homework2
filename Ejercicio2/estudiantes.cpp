@@ -43,7 +43,7 @@ double Estudiante::getPromedio() const {
 void Estudiante::cambiarNotaCurso(const string& nombreCurso, double nuevaNota) {
     for (auto& curso : cursos) { 
         if (curso.first == nombreCurso) { 
-            curso.second = nuevaNota; // Modifica la nota de la materia
+            curso.second = nuevaNota; // modifica la nota de la materia
             return;
         }
     }
@@ -53,10 +53,10 @@ void Estudiante::cambiarNotaCurso(const string& nombreCurso, double nuevaNota) {
 double Estudiante::obtenerNotaDeCurso(const string& nombreCurso) const {
     for (const auto& curso : cursos) {
         if (curso.first == nombreCurso) {
-            return curso.second;  // Retorna la nota específica de este curso
+            return curso.second;  // retorna la nota específica de este curso
         }
     }
-    return 0.0;  // Si no está inscrito en ese curso, retorna 0
+    return 0.0;  // si no está inscrito en ese curso, retorna 0
 }
 
 

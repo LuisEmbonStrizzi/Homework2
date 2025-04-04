@@ -4,10 +4,10 @@
 #include <vector>
 using namespace std;
 
-//Como me parecía un poco rebuscada la consigna decidí incluir varios casos de testeo. 
-//Esta parte me parecía rebuscada una lista de cursos con su nota final y los métodos
+//como me parecía un poco rebuscada la consigna decidí incluir varios casos de testeo. 
+//Esta parte me parecía rebuscada: u"na lista de cursos con su nota final y los métodos
 //que crea necesarios para obtener los datos del alumno: nombre completo,
-//legajo y su promedio general. Específicamente, como testear los cursos del estudiante y su promedio general
+//legajo y su promedio general". Específicamente, me pareció raro como testear los cursos del estudiante y su promedio general
 //quizás no era necesario incluirlo como caso de testeo pero igual lo incluí por las dudas
 
 void mostrarMenu() {
@@ -112,7 +112,7 @@ int main() {
                     if (curso.getNombre() == nombreCurso) {
                         cout << "Estudiantes en el curso '" << nombreCurso << "':\n";
                         for (const auto& est : curso.obtenerEstudiantes()) {
-                            // Obtener la nota del estudiante en este curso
+                            // obtengo la nota del estudiante en este curso
                             double notaCurso = est->obtenerNotaDeCurso(nombreCurso);
                             
                             cout << "Nombre: " << est->getName() 
@@ -143,10 +143,10 @@ int main() {
                         cout << "Ingrese nombre para el nuevo curso: ";
                         getline(cin, nuevoNombreCurso);
             
-                        Curso nuevoCurso = curso;  //Acá se hace la copia, o sea la shallow copy en este caso
-                        nuevoCurso.crearCurso(nuevoNombreCurso);  // Cambia el nombre del curso copiado
+                        Curso nuevoCurso = curso;  //acá se hace la copia, o sea la shallow copy en este caso
+                        nuevoCurso.crearCurso(nuevoNombreCurso);  //cambia el nombre del curso copiado
             
-                        //Acá me aseguro que cada estudiante agregue el nuevo curso a su lista de materias
+                        //acá me aseguro que cada estudiante agregue el nuevo curso a su lista de materias
                         for (auto& estudiante : nuevoCurso.obtenerEstudiantes()) {
                             estudiante->agregarCurso(nuevoNombreCurso, 0.0); 
                         }
@@ -154,7 +154,7 @@ int main() {
                         cursos.push_back(nuevoCurso);
                         cout << "Curso copiado correctamente como '" << nuevoNombreCurso << "'.\n";
             
-                        // Comprobación inmediata: muestro los estudiantes del curso copiado
+                        //muestro los estudiantes del curso copiado
                         cout << "Estudiantes en el curso copiado:\n";
                         nuevoCurso.imprimirEstudiantes();  
             
@@ -192,8 +192,8 @@ int main() {
             
                 bool encontrado = false;
             
-                for (const auto& curso : cursos) {  // Recorre todos los cursos
-                    for (const auto& est : curso.obtenerEstudiantes()) {  // Recorre los estudiantes en el curso
+                for (const auto& curso : cursos) {  //recorre todos los cursos
+                    for (const auto& est : curso.obtenerEstudiantes()) {  //recorre los estudiantes en el curso
                         if (est->getLegajo() == legajo) {
                             cout << "Cursos del estudiante en '" << curso.getNombre() << "':\n";
                             est->mostrarCursos();
@@ -216,7 +216,7 @@ int main() {
             
                 shared_ptr<Estudiante> estudiante = nullptr;
             
-                // Buscar el estudiante en todos los cursos
+                //buscar el estudiante en todos los cursos
                 for (const auto& curso : cursos) {
                     for (const auto& est : curso.obtenerEstudiantes()) {
                         if (est->getLegajo() == legajo) {
@@ -266,7 +266,7 @@ int main() {
                 
                 shared_ptr<Estudiante> estudiante = nullptr;
                 
-                // Buscar al estudiante en cualquier curso
+                //buscar al estudiante en cualquier curso
                 for (auto& curso : cursos) {  
                     for (auto& est : curso.obtenerEstudiantes()) {
                         if (est->getLegajo() == legajo) {
@@ -299,14 +299,14 @@ int main() {
                     if (curso.getNombre() == nombreCurso) {
                         for (int i = 1; i <= 20; i++) {
                             string nombreEstudiante = "Estudiante " + to_string(i);
-                            int legajo = 400 + i; // Legajo hardcodeado para cada estudiante
+                            int legajo = 400 + i; //legajo hardcodeado para cada estudiante
                             
                             if (!curso.inscribirEstudiante(nombreEstudiante, legajo)) {
                                 cout << "No se pudo inscribir a " << nombreEstudiante << ".\n";
                             }
                         }
             
-                        // Intentar inscribir el estudiante 21
+                        //intentar inscribir el estudiante 21
                         string nombreEstudianteExtra = "Estudiante 21";
                         int legajoExtra = 8989;
                         if (!curso.inscribirEstudiante(nombreEstudianteExtra, legajoExtra)) {

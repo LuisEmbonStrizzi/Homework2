@@ -14,7 +14,7 @@ public:
     void retirar(double cantidad) override;
     void mostrarInfo() const override;
 
-    //lo puse friend para acceder a datos privados sin violar encapsulación
+    //lo puse friend para acceder a datos privados sin violar el hecho de la encapsulación
     friend void verificarFondos(const CuentaCorriente& cuenta);
 };
 
